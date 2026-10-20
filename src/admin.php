@@ -24,7 +24,7 @@ if (isset($_GET['sort'])) {
             $request = "SELECT * FROM orders
                 INNER JOIN users ON orders.user_id = users.user_id
                 INNER JOIN statuses ON orders.status_id = statuses.status_id
-                ORDER BY total_price DESC";
+                ORDER BY total_price";
             break;
         case 'status':
             $request = "SELECT * FROM orders

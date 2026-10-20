@@ -34,7 +34,6 @@
 
                                 $product_info['price'] = number_format($total_price, 0, '', ' ');
                             ?>
-
                                 <tr class="border-bottom">
                                     <td class="p-2 pb-5">
                                         <div class="d-flex justify-content-center">
@@ -88,7 +87,6 @@
                                                 <img src="img/trash.png" alt="" width="30px" style="height:30px;">
                                                 <p class='my-auto'>Удалить</p>
                                             </div>
-
                                         </a>
                                     </td>
                                 </tr>

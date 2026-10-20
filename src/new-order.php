@@ -27,7 +27,7 @@
         $stmt = $pdo->prepare("DELETE FROM `cart` WHERE product_id = ? AND user_id = ?");
         $stmt->execute([$product_in_cart['product_id'], $user_id]);
     }
-    header ('Location: ../cart.php');
+    header ('Location: ../profile.php');
     exit;
 
 
