@@ -2,7 +2,6 @@
 session_start();
 $errors = [];
 if (empty($_SESSION['login'])) {
-    // $errors[] = 'Перед добавлением в корзину необходимо авторизоваться';
     header('Location: ../auth.php');
     exit;
 } else {

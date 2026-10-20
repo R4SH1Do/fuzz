@@ -99,7 +99,6 @@
                 </table>
             </div>
         <?php endif ?>
-        <!-- ПОФИКСИТЬ СМЕЩЕНИЕ ЭТОГО БЛОКА -->
         <div class="col-12 col-md-10 col-lg-4 col-xl-4 bg-white rounded p-3 border shadow mb-3 mx-auto" style="top: 100px; position: sticky; height: fit-content; z-index: 1000;">
             <h3>Сумма заказа</h3>
             <div class="d-flex justify-content-between border-bottom pb-1">
@@ -134,4 +133,3 @@
     </div>
 </div>
 </div>
-<!-- <div class="container-fluid row d-sm-block d-md-block d-lg-flex d-xl-flex justify-content-between justify-content-center"> -->

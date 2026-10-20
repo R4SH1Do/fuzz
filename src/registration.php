@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/db.php';
-$errors = []; #массив где хранятся все ошибки
+$errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = trim($_POST['login'] ?? '');
     $password = trim($_POST['password'] ?? '');
@@ -12,10 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         if (mb_strlen($login) < 6) {
             $errors[] = 'Логин должен содержать минимум 6 символов';
-        } elseif (!preg_match('/^[a-zA-Z0-9]+$/', $login)) { #preg_match(паттерн, субъект) Выполняет проверку на соответствие регулярному выражению
+        } elseif (!preg_match('/^[a-zA-Z0-9]+$/', $login)) { 
             $errors[] = 'Логин может содержать только латинские буквы и цифры';
         }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { #filter_var -- фильтрует переменные, FILTER_VALIDATE_EMAIL -- встроенный фильтр, проверяющий корректность email по RFC-стандарту
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Неверный формат email';
         }
         if (!preg_match('/^[0-9]+$/', $phone_number)) {
@@ -29,10 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($errors)) {
             $stmt = $pdo->prepare("SELECT user_id FROM users WHERE login = ? OR email = ?");
             $stmt->execute([$login, $email]);
-            if ($stmt->fetch()) { #fetch -- извлекает одну строку из результата запроса, если ничего не извлечено, то вернет false и код пойдет дальше
+            if ($stmt->fetch()) {
                 $errors[] = 'Такой логин или email уже занят';
             }
-
         }
         if (empty($errors)) {
             $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -42,7 +41,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
     }
-
-
 }
 ?>

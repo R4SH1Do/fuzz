@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/db.php';
-$errors = []; #массив где хранятся все ошибки
+$errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = trim($_POST['login'] ?? '');
     $password = trim($_POST['password'] ?? '');
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         } elseif (mb_strlen($login) < 6) {
             $errors[] = 'Логин должен содержать минимум 6 символов';
-        } elseif (!preg_match('/^[a-zA-Z0-9]+$/', $login)) { #preg_match(паттерн, субъект) Выполняет проверку на соответствие регулярному выражению
+        } elseif (!preg_match('/^[a-zA-Z0-9]+$/', $login)) {
             $errors[] = 'Логин может содержать только латинские буквы и цифры';
         }elseif (mb_strlen($password) < 8) {
             $errors[] = 'Пароль должен содержать минимум 8 символов';

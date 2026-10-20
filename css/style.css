@@ -82,21 +82,21 @@ main.htmx-settling {
     background-color: #FFFFFF;
     border-radius:50%;
     cursor: pointer;
-    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+    transition: all 0.3s ease;
 
 }
 .round-toggle img {
     transition: all 0.3s ease;
 }
 
-/* Эффект при наведении */
+
 .round-toggle:hover {
-    background-color: #e2e6ea; /* Круг становится чуть темнее */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Появляется легкая тень */
+    background-color: #e2e6ea; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
 
 .round-toggle:hover img {
-    transform: translateX(4px); /* Стрелочка едет вправо */
+    transform: translateX(4px);
 }
 #grid-image-1:hover{
     .round-toggle{
@@ -160,7 +160,7 @@ main.htmx-settling {
     transition: transform 0.3s ease; 
 }
 .product-card:hover .img-container img {
-    transform: scale(1.1); /* Увеличиваем картинку на 10% */
+    transform: scale(1.1);
 }
 .bg-main{
     background-color: #6f0000;
