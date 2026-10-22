@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 20 2026 г., 18:01
+-- Время создания: Окт 23 2026 г., 00:51
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -49,16 +49,6 @@ CREATE TABLE `orders` (
   `total_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Дамп данных таблицы `orders`
---
-
-INSERT INTO `orders` (`order_id`, `user_id`, `status_id`, `creation_date`, `total_price`) VALUES
-(15, 1, 3, '2026-10-10', 40483),
-(16, 1, 1, '2026-10-17', 266727),
-(17, 3, 3, '2026-10-18', 246477),
-(18, 3, 3, '2026-10-18', 266727);
-
 -- --------------------------------------------------------
 
 --
@@ -72,19 +62,6 @@ CREATE TABLE `order_items` (
   `quantity` int NOT NULL,
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `order_items`
---
-
-INSERT INTO `order_items` (`order_item_id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
-(7, 15, 6, 1, 40483),
-(8, 16, 5, 1, 40515),
-(9, 16, 4, 1, 226212),
-(10, 17, 9, 2, 118174),
-(11, 17, 10, 1, 128303),
-(12, 18, 4, 3, 226212),
-(13, 18, 5, 1, 40515);
 
 -- --------------------------------------------------------
 
@@ -153,14 +130,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `users`
---
-
-INSERT INTO `users` (`user_id`, `login`, `password`, `full_name`, `phone_number`, `email`) VALUES
-(1, 'logggh', '$2y$10$37.03bV8ySiaTwVYw6ft0.3bZVTtb5Jxj.fk7zo2zQBlhiZJbXROu', 'Логин Логинович Логин', '89255154756', 'login@gmail.com'),
-(3, 'ivanchik', '$2y$10$nl.3354dATc0MRKzUNLF6.rUu8OTKYLiaSJEmaQ3eRMr1fzoK4Xw6', 'Иванов Иван Иванович', '89456213548', 'ivan@gmail.com');
-
---
 -- Индексы сохранённых таблиц
 --
 
@@ -216,7 +185,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
